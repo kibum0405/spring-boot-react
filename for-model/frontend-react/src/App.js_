@@ -8,10 +8,7 @@ import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from 
 function App() {
   return (
     <div className="App">
-      <Card
-        style={{maxWidth:"100%", minWidth:'300px',height:'300px', margin:'20px', textAlign:"center",}}
-        variant="outlined"
-      >
+      
           {{#boundedContexts}}
             {{#aggregates}}
               <div>
@@ -25,7 +22,6 @@ function App() {
               </div>
             {{/viewes}}
           {{/boundedContexts}}
-      </Card>
     </div>
   );
 }
