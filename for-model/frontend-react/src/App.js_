@@ -3,23 +3,46 @@ path: for-model/frontend-react/src
 fileName: App.js
 ---
 import './App.css';
+import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from '@mui/material';
+
 
 function App() {
   return (
     <div className="App">
-      {{#boundedContexts}}
-        {{#aggregates}}
-          <div>
-              {{namePascalCase}}
-          </div>
-        {{/aggregates}}
+      <Card
+        style={{maxWidth:"100%", minWidth:'300px',height:'300px', margin:'20px', textAlign:"center",}}
+        variant="outlined"
+      >
+      <CardContent sx={{textAlign:"center", mt:'80px'}}>
+        <ul style={{margin: 0, padding: 0, listStyle: 'none' }}>
+          <Typography
+            component="li"
+            // variant="subtitle1"
+            align="center"
+          >
+            <AppsIcon sx={{ fontSize: '60px', color: 'rgb(149, 117, 205)' }}/>
+          </Typography>
+        </ul>
+      </CardContent>
+      <CardActions>
+        <Button fullWidth={true} color="secondary" variant="outlined">
+          {{#boundedContexts}}
+            {{#aggregates}}
+              <div>
+                  {{namePascalCase}}
+              </div>
+            {{/aggregates}}
 
-        {{#viewes}}
-          <div>
-              {{namePascalCase}}
-          </div>
-        {{/viewes}}
-      {{/boundedContexts}}
+            {{#viewes}}
+              <div>
+                  {{namePascalCase}}
+              </div>
+            {{/viewes}}
+          {{/boundedContexts}}
+        </Button>
+      </CardActions>
+    </Card>
+      
     </div>
   );
 }
