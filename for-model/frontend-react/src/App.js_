@@ -8,20 +8,14 @@ import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from 
 function App() {
   return (
     <div className="App">
-      
-          {{#boundedContexts}}
-            {{#aggregates}}
-              <div>
-                  {{namePascalCase}}
-              </div>
-            {{/aggregates}}
-
-            {{#viewes}}
-              <div>
-                  {{namePascalCase}}
-              </div>
-            {{/viewes}}
-          {{/boundedContexts}}
+      {{#boundedContexts}}
+        {{#aggregates}}
+          <div>{{namePascalCase}}</div>
+        {{/aggregates}}
+        {{#viewes}}
+          <div>{{namePascalCase}}</div>
+        {{/viewes}}
+      {{/boundedContexts}}
     </div>
   );
 }
