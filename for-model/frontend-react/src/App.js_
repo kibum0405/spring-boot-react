@@ -1,0 +1,25 @@
+fileName: App.js
+---
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+        {{#boundedContexts}}
+            {{#aggregates}}
+                <div>
+                    {{namePascalCase}}
+                </div>
+            {{/aggregates}}
+
+            {{#viewes}}
+                <div>
+                    {{namePascalCase}}
+                </div>
+            {{/viewes}}
+        {{/boundedContexts}}
+    </div>
+  );
+}
+
+export default App;
