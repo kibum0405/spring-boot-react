@@ -1,3 +1,25 @@
-.left-menu {
-  background-color:red;
+.clearfix::after{content:""; display:block; clear:both;}
+
+.app-header {
+  background-color:yellow;
+  height:10vh;
+}
+
+.app-main {
+  display:flex;
+}
+
+.app-left-menu {
+  background-color:green;
+  float:left;
+  width:20vw;
+}
+
+.app-right {
+  background-color:blue;
+  height:100vh;
+  width:80vw;
+}
+
+.app {
 }
