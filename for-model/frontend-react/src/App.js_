@@ -2,20 +2,22 @@ fileName: App.js
 ---
 
 import './App.css';
+import 
 import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from '@mui/material';
 
 
 function App() {
   return (
-    <div className="App">
-      {{#boundedContexts}}
-        {{#aggregates}}
-          <div>{{namePascalCase}}</div>
-        {{/aggregates}}
-        {{#viewes}}
-          <div>{{namePascalCase}}</div>
-        {{/viewes}}
-      {{/boundedContexts}}
+    <div>
+      <header>상단</header>
+      <div className="left-menu">
+        {{#boundedContexts}}
+          {{#aggregates}}
+            <div>{{namePascalCase}}</div>
+          {{/aggregates}}
+        {{/boundedContexts}}
+      </div>
+      <section>메인</section>
     </div>
   );
 }
