@@ -2,6 +2,7 @@ fileName: App.js
 ---
 
 import './App.css';
+import TopMenu from './components/TopMenu.js';
 
 function App() {
   return (
