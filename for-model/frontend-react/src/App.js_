@@ -6,21 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="app">
-      <header className="app-header">{{ projectName }}</header>
-      <div className="clearfix app-main">
-        <div className="app-left-menu">
-          {{#boundedContexts}}
-            {{#aggregates}}
-              <div
-                key="{{namePlural}}"
-                to="/{{namePlural}}"
-              >{{namePascalCase}}
-              </div>
-            {{/aggregates}}
-          {{/boundedContexts}}
-        </div>
-        <section className="app-right">메인</section>
-      </div>
+      <TopMenu />
     </div>
   );
 }
