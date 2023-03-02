@@ -19,6 +19,7 @@ class TopMenu extends Component {
                             edge="start"
                             color="inherit"
                             aria-label="menu"
+                            sx={{ mr: 2 }}
                             onClick={this.props.handleClick}
                         >
                             <MenuIcon></MenuIcon>
