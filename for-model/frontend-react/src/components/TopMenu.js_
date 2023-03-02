@@ -4,7 +4,6 @@ fileName: TopMenu.js
 import React, { Component } from 'react';
 import {AppBar, Stack,Toolbar,} from '@mui/material/';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 
 class TopMenu extends Component {
     render() {
@@ -12,14 +11,7 @@ class TopMenu extends Component {
             <AppBar position="static">
                 <Stack direction="row" spacing={2}>
                     <Toolbar position="fixed" disableGutters={true}>
-                        <IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            sx={{ mr: 2 }}
-                            onClick={this.props.handleClick}
-                        >
+                        <IconButton>
                         </IconButton>
                     </Toolbar>
                 </Stack>
