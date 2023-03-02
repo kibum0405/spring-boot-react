@@ -2,10 +2,9 @@ fileName: TopMenu.js
 ---
 
 import React, { Component } from 'react';
-import {AppBar, Stack, Toolbar, Typography} from '@mui/material/';
+import {AppBar, Stack, Toolbar} from '@mui/material/';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 
@@ -36,24 +35,6 @@ class TopMenu extends Component {
                             >
                                 <MenuIcon />
                             </IconButton>
-                            <Typography variant="h6" component="div">
-                                google drive
-                                {
-                                    this.props.urlPath?
-                                    <IconButton
-                                    size="small"
-                                    edge="start"
-                                    key=""
-                                    to="/"
-                                    color="inherit"
-                                    aria-label="menu"
-                                    onClick={this.goHome}
-                                    >
-                                        <HomeIcon />
-                                    </IconButton>
-                                    :""
-                            }
-                            </Typography>
                         </Toolbar>
                     </Stack>
                 </AppBar>
