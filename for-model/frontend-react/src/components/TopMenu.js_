@@ -13,7 +13,7 @@ class TopMenu extends Component {
                 <Stack direction="row" spacing={2}>
                     <Toolbar position="fixed" disableGutters={true}>
                         <IconButton>
-                            <MenuIcon></MenuIcon>
+                            <MenuIcon />
                         </IconButton>
                     </Toolbar>
                 </Stack>
