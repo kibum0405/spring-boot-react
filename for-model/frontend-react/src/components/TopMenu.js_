@@ -1,31 +1,19 @@
 fileName: TopMenu.js
 ---
 
-
 import React, { Component } from 'react';
-import {AppBar,} from '@mui/material/';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import {AppBar, Stack,Toolbar,} from '@mui/material/';
 
 class TopMenu extends Component {
-    goHome = () => {
-        this.props.handleProps('urlPath', null);
-    }
     render() {
-        const darkTheme = createTheme({
-            palette: {
-              primary: {
-                main: '#F5F5F5',
-              },
-            },
-          });
         return (
-            <div>
-                <ThemeProvider theme={darkTheme}>
-                    <AppBar position="static">
+            <AppBar position="static">
+                <Stack direction="row" spacing={2}>
+                    <Toolbar position="fixed" disableGutters={true}>
                         
-                    </AppBar>
-                </ThemeProvider>
-            </div>
+                    </Toolbar>
+                </Stack>
+            </AppBar>
         );
     }
 }
