@@ -3,18 +3,42 @@ fileName: TopMenu.js
 
 import React, { Component } from 'react';
 import {AppBar, Stack, Toolbar} from '@mui/material/';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 
 
 class TopMenu extends Component {
     render() {
+        const darkTheme = createTheme({
+            palette: {
+                primary: {
+                main: '#F5F5F5',
+                },
+            },
+        });
         return (
+            <ThemeProvider theme={darkTheme}>
                 <AppBar position="static">
                     <Stack direction="row" spacing={2}>
                         <Toolbar position="fixed" disableGutters={true}>
+                            <IconButton
+                                size="large"
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                onClick={this.props.handleClick}
+                                style = {{
+                                    marginLeft: '2px'
+                                }}
+                            >
+                                <MenuIcon />
+                            </IconButton>
                         </Toolbar>
                     </Stack>
                 </AppBar>
+            </ThemeProvider>
         );
     }
 }
