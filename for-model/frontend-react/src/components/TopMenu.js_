@@ -20,7 +20,6 @@ class TopMenu extends Component {
                             sx={{ mr: 2 }}
                             onClick={this.props.handleClick}
                         >
-                            <MenuIcon />
                         </IconButton>
                     </Toolbar>
                 </Stack>
