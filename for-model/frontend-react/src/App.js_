@@ -1,61 +1,42 @@
 fileName: App.js
 ---
 
-import React, { Component } from 'react';
-import {AppBar, Stack,Toolbar, Typography} from '@mui/material/';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import './App.css';
+import React from 'react';
+import TopMenu from './components/TopMenu.js';
+import { Grid } from '@mui/material';
 
+class App extends React.Component {
+  constructor(props) {
+		console.log("App.js")
+		super(props);
+		this.state = {
+			menuFlag: false,
+			useComponent: "",
+			drawer: true,
+			components: [],
+			sideBar: true,
+        	urlPath: "null",
+		}
+	}
+  handleClick = () => {
+		this.setState({
+			menuFlag: !this.state.menuFlag,
+		})
+	}
+  render() {
+    return (
+      <>
+        <TopMenu className="top-menu-home-icon" handleClick={this.handleClick} urlPath={this.state.urlPath} handleProps={this.handleProps}/>
 
-
-class TopMenu extends Component {
-    render() {
-        const darkTheme = createTheme({
-            palette: {
-                primary: {
-                main: '#F5F5F5',
-                },
-            },
-        });
-        return (
-            <ThemeProvider theme={darkTheme}>
-                <AppBar position="static">
-                    <Stack direction="row" spacing={2}>
-                        <Toolbar position="fixed" disableGutters={true}>
-                            <IconButton className="top-menu-left-btn"
-                                size="large"
-                                edge="start"
-                                color="inherit"
-                                aria-label="menu"
-                                onClick={this.props.handleClick}
-                            >
-                                <MenuIcon />
-                            </IconButton>
-                            <Typography variant="h6" component="div">
-                                {{ projectName }}
-                                {
-                                    this.props.urlPath?
-                                    <IconButton className="top-menu-home-icon-btn"
-                                        size="small"
-                                        key=""
-                                        to="/"
-                                        color="inherit"
-                                        aria-label="menu"
-                                        onClick={this.goHome}
-                                    >
-                                        <HomeIcon />
-                                    </IconButton>
-                                    :""
-                                }
-                            </Typography>
-                        </Toolbar>
-                    </Stack>
-                </AppBar>
-            </ThemeProvider>
-        );
-    }
+        <Grid className="app-rid-main" container>
+          <Grid item lg={1}>
+          </Grid>
+        </Grid>
+      </>
+    );
+  }
 }
 
-export default TopMenu;
+export default App;
+
