@@ -34,7 +34,7 @@ class TopMenu extends Component {
                                 <MenuIcon />
                             </IconButton>
                             <Typography variant="h6" component="div">
-                                google drive
+                                {{ projectName }}
                                 {
                                     this.props.urlPath?
                                     <IconButton className="top-menu-home-icon-btn"

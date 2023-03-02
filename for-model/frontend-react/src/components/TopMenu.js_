@@ -35,23 +35,23 @@ class TopMenu extends Component {
                                 <MenuIcon />
                             </IconButton>
                             <Typography variant="h6" component="div">
-                                    {{ projectName }}
-                                    {
-                                        this.props.urlPath?
-                                            <IconButton
-                                            size="small"
-                                            edge="start"
-                                            key=""
-                                            to="/"
-                                            color="inherit"
-                                            aria-label="menu"
-                                            onClick={this.goHome}
-                                            >
-                                                <HomeIcon />
-                                            </IconButton>
-                                            :""
-                                    }
-                                </Typography>
+                                {{ projectName }}
+                                {
+                                    this.props.urlPath?
+                                    <IconButton
+                                    size="small"
+                                    edge="start"
+                                    key=""
+                                    to="/"
+                                    color="inherit"
+                                    aria-label="menu"
+                                    onClick={this.goHome}
+                                    >
+                                        <HomeIcon />
+                                    </IconButton>
+                                    :""
+                                }
+                            </Typography>
                         </Toolbar>
                     </Stack>
                 </AppBar>
