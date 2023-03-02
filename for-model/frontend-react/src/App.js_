@@ -28,9 +28,9 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <TopMenu handleClick={this.handleClick} urlPath={this.state.urlPath} handleProps={this.handleProps}/>
+        <TopMenu className="top-menu-home-icon" handleClick={this.handleClick} urlPath={this.state.urlPath} handleProps={this.handleProps}/>
 
-        <Grid className="app-Grid-main" container>
+        <Grid className="app-grid-main" container>
           <Grid item lg={1}>
             <LeftMenu menuFlag={this.state.menuFlag} handleClick={this.handleClick}
                   changeUrl={this.changeUrl}
