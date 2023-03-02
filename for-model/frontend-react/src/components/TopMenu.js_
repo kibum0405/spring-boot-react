@@ -34,26 +34,26 @@ class TopMenu extends Component {
                                     marginLeft: '2px'
                                 }}
                             >
-                                <MenuIcon></MenuIcon>
+                                <MenuIcon />
                             </IconButton>
                             <Typography variant="h6" component="div">
-                                    {{ projectName }}
-                                    {
-                                        this.props.urlPath?
-                                            <IconButton
-                                            size="small"
-                                            edge="start"
-                                            key=""
-                                            to="/"
-                                            color="inherit"
-                                            aria-label="menu"
-                                            onClick={this.goHome}
-                                            >
-                                                <HomeIcon />
-                                            </IconButton>
-                                            :""
-                                    }
-                                </Typography>
+                                google drive
+                                {
+                                    this.props.urlPath?
+                                    <IconButton
+                                    size="small"
+                                    edge="start"
+                                    key=""
+                                    to="/"
+                                    color="inherit"
+                                    aria-label="menu"
+                                    onClick={this.goHome}
+                                    >
+                                        <HomeIcon />
+                                    </IconButton>
+                                    :""
+                            }
+                            </Typography>
                         </Toolbar>
                     </Stack>
                 </AppBar>
