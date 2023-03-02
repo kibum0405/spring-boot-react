@@ -9,14 +9,13 @@ function App() {
     <div className="app">
       <TopMenu />
 
-      <Grid container style={{maxWidth:"100%", width:'100%'}}>
-			{/* <Grid item xs="2"> */}
-			<Grid item lg={1}>
-				<LeftMenu menuFlag={this.state.menuFlag} handleClick={this.handleClick}
-							changeUrl={this.changeUrl}
-        />
-			</Grid>
-		</Grid>
+      <Grid className="app-Grid-main" container>
+        <Grid item lg={1}>
+          <LeftMenu menuFlag={this.state.menuFlag} handleClick={this.handleClick}
+                changeUrl={this.changeUrl}
+          />
+        </Grid>
+		  </Grid>
     </div>
   );
 }
