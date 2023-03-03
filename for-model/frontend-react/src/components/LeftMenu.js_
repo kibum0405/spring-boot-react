@@ -29,15 +29,15 @@ class Layout extends React.Component {
                 onKeyDown={handleClick}
                 >
                     {{#boundedContexts}}
-                        {{#aggregates}}
-                            <List>
-                                <ListItem disablePadding>
-                                    <ListItemButton>
-                                        <ListItemText>{{namePascalCase}}</ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
-                            </List>
-                        {{/aggregates}}
+                    {{#aggregates}}
+                    <List>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemText>{{namePascalCase}}</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </List>
+                    {{/aggregates}}
                     {{/boundedContexts}}
                 </Box>
             </Drawer>
