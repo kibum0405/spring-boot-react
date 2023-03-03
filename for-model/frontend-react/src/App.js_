@@ -51,7 +51,9 @@ class App extends React.Component {
 
         <Grid className="app-grid-main" container>
 			<Grid item lg={1}>
-				<LeftMenu menuFlag={this.state.menuFlag} />
+				<LeftMenu menuFlag={this.state.menuFlag}
+                    handleClick={this.handleClick}
+                />
 			</Grid>
         </Grid>
       </>
