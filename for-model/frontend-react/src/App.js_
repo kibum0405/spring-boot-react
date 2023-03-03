@@ -5,6 +5,7 @@ import './App.css';
 import React from 'react';
 import TopMenu from './components/TopMenu.js';
 import { Grid } from '@mui/material';
+import LeftMenu from './components/LeftMenu.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -19,19 +20,39 @@ class App extends React.Component {
         	urlPath: "null",
 		}
 	}
-  handleClick = () => {
+	componentDidMount () {
+		let path = document.location.href.split("#/")
+		this.setState({...this.state, urlPath:path[0]});
+		this.handleClick = this.handleClick.bind(this);
+	}
+	handleClick = () => {
 		this.setState({
 			menuFlag: !this.state.menuFlag,
 		})
 	}
+	handleProps = (name, value) => {
+		this.setState({ ...this.state,
+			[name]: value,
+		})
+	}
+	changeUrl = () => {
+		let path = document.location.href.split("#/")
+		console.log("changeUrl", path);
+		this.setState({...this.state, urlPath:path[0]});
+	}
   render() {
     return (
       <>
-        <TopMenu className="top-menu-home-icon" handleClick={this.handleClick} urlPath={this.state.urlPath} handleProps={this.handleProps}/>
+        <TopMenu className="top-menu-home-icon"
+			handleClick={this.handleClick}
+			urlPath={this.state.urlPath}
+			handleProps={this.handleProps}
+		/>
 
-        <Grid className="app-rid-main" container>
-          <Grid item lg={1}>
-          </Grid>
+        <Grid className="app-grid-main" container>
+			<Grid item lg={1}>
+				<LeftMenu menuFlag={this.state.menuFlag} />
+			</Grid>
         </Grid>
       </>
     );

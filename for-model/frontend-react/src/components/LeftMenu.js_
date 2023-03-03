@@ -2,7 +2,6 @@ fileName: LeftMenu.js
 ---
 
 import React from 'react'
-import { Link } from 'react-router-dom';
 import {Box, Drawer, List, ListItem, ListItemButton} from '@mui/material/';
 import ListItemText from '@mui/material/ListItemText';
 
@@ -17,7 +16,6 @@ class Layout extends React.Component {
     render() {
         let menuFlag = this.props.menuFlag;
         let handleClick = this.props.handleClick;
-        let changeUrl = this.props.changeUrl;
         return (
           <div>
             <Drawer
@@ -30,36 +28,17 @@ class Layout extends React.Component {
                 onClick={handleClick}
                 onKeyDown={handleClick}
                 >
-                    <List>
-                        <Link onClick={changeUrl} to="/">
-                            <ListItem disablePadding >
-                                <ListItemButton>
-                                    <ListItemText primary="Dashboard" />
-                                </ListItemButton>
-                            </ListItem>
-                        </Link>
-                        <Link onClick={changeUrl} to="/files">
-                            <ListItem disablePadding>
-                                <ListItemButton>
-                                    <ListItemText primary="File" />
-                                </ListItemButton>
-                            </ListItem>
-                        </Link>
-                        <Link onClick={changeUrl} to="/indices">
-                            <ListItem disablePadding>
-                                <ListItemButton>
-                                    <ListItemText>Index</ListItemText>
-                                </ListItemButton>
-                            </ListItem>
-                        </Link>
-                        <Link onClick={changeUrl} to="/video">
-                            <ListItem disablePadding>
-                                <ListItemButton>
-                                    <ListItemText>Video</ListItemText>
-                                </ListItemButton>
-                            </ListItem>
-                        </Link>
-                    </List>
+                    {{#boundedContexts}}
+                        {{#aggregates}}
+                            <List>
+                                <ListItem disablePadding>
+                                    <ListItemButton>
+                                        <ListItemText>{{namePascalCase}}</ListItemText>
+                                    </ListItemButton>
+                                </ListItem>
+                            </List>
+                        {{ /aggregates }}
+                    {{ /boundedContexts }}
                 </Box>
             </Drawer>
           </div>
