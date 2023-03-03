@@ -28,17 +28,17 @@ class Layout extends React.Component {
                 onClick={handleClick}
                 onKeyDown={handleClick}
                 >
+                    <List>
                     {{#boundedContexts}}
                     {{#aggregates}}
-                    <List>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemText>{{namePascalCase}}</ListItemText>
                             </ListItemButton>
                         </ListItem>
-                    </List>
                     {{/aggregates}}
                     {{/boundedContexts}}
+                    </List>
                 </Box>
             </Drawer>
           </div>
