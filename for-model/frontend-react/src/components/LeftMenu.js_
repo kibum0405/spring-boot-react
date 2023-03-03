@@ -37,8 +37,8 @@ class Layout extends React.Component {
                                     </ListItemButton>
                                 </ListItem>
                             </List>
-                        {{ /aggregates }}
-                    {{ /boundedContexts }}
+                        {{/aggregates}}
+                    {{/boundedContexts}}
                 </Box>
             </Drawer>
           </div>
