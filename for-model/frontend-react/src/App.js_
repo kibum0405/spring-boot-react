@@ -60,13 +60,7 @@ class App extends React.Component {
             <Grid item lg={8}>
 				{this.state.urlPath?
                     <Routes>
-                        <Route path="/" element={<DashboardView />} />
-                        <Route path="/files" element={<FileManager />} />
-                        <Route path="/files/:id" element={<FileDetail />} />
-                        <Route path="/indices" element={<IndexManager />} />
-                        <Route path="/indices/:id" element={<IndexManager />} />
-                        <Route path="/video" element={<Video />} />
-                        <Route path="*" element={<NoMatch />} />
+                        <Route path="/{{namePlural}}" element={<{{nameCamelCase}} />} />
                     </Routes>
 					:
 				    (
