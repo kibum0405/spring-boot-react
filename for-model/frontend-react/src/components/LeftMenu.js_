@@ -30,17 +30,17 @@ class Layout extends React.Component {
                 onKeyDown={handleClick}
                 >
                     <List>
-                        <Link onClick={changeUrl} to="/{{namePlural}}">
                         {{#boundedContexts}}
                         {{#aggregates}}
+                        <Link onClick={changeUrl} to="/{{namePlural}}">
                             <ListItem disablePadding>
                                 <ListItemButton>
                                     <ListItemText>{{namePascalCase}}</ListItemText>
                                 </ListItemButton>
                             </ListItem>
+                        </Link>
                         {{/aggregates}}
                         {{/boundedContexts}}
-                        </Link>
                     </List>
                 </Box>
             </Drawer>
