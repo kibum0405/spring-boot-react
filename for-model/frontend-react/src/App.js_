@@ -55,18 +55,23 @@ class App extends React.Component {
                     handleClick={this.handleClick}
                 />
 			</Grid>
-            {{#boundedContexts}}
-            {{#aggregates}}
             <Grid item lg={8}>
-				{this.state.urlPath?
+				{
+                    this.state.urlPath?
                     <Routes>
+                        {{#boundedContexts}}
+                        {{#aggregates}}
                         <Route path="/{{namePlural}}" element={<{{nameCamelCase}} />} />
+                        {{/aggregates}}
+                        {{/boundedContexts}}
                     </Routes>
 					:
 				    (
 					<Stack className="app-stack-style"
 						justifyContent="center"
 					>
+                        {{#boundedContexts}}
+                        {{#aggregates}}
 						<Card className="app-card-style"
                             variant="outlined"
                         >
@@ -86,12 +91,12 @@ class App extends React.Component {
                                 </Button>
                             </CardActions>
 						</Card>
+                        {{/aggregates}}
+                        {{/boundedContexts}}
 					</Stack>
 				    )
 				}
 			</Grid>
-            {{/aggregates}}
-            {{/boundedContexts}}
         </Grid>
       </>
     );
