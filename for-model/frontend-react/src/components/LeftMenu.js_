@@ -4,6 +4,7 @@ fileName: LeftMenu.js
 import React from 'react'
 import {Box, Drawer, List, ListItem, ListItemButton} from '@mui/material/';
 import ListItemText from '@mui/material/ListItemText';
+import { Link } from 'react-router-dom';
 
 class Layout extends React.Component {
     toggleDrawer = (anchor, open) => (event) => {
@@ -29,15 +30,17 @@ class Layout extends React.Component {
                 onKeyDown={handleClick}
                 >
                     <List>
-                    {{#boundedContexts}}
-                    {{#aggregates}}
-                        <ListItem disablePadding>
-                            <ListItemButton>
-                                <ListItemText>{{namePascalCase}}</ListItemText>
-                            </ListItemButton>
-                        </ListItem>
-                    {{/aggregates}}
-                    {{/boundedContexts}}
+                        <Link onClick={changeUrl} to="/{{namePascalCase}}">
+                        {{#boundedContexts}}
+                        {{#aggregates}}
+                            <ListItem disablePadding>
+                                <ListItemButton>
+                                    <ListItemText>{{namePascalCase}}</ListItemText>
+                                </ListItemButton>
+                            </ListItem>
+                        {{/aggregates}}
+                        {{/boundedContexts}}
+                        </Link>
                     </List>
                 </Box>
             </Drawer>
