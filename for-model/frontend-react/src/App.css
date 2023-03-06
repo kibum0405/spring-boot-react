@@ -3,4 +3,45 @@
     width:100vw;
   }
   
+.app-card-style {
+    max-width:100%;
+    min-width:300px;
+    height:300px; 
+    margin:20px;
+    text-align:center;
+}
+
+.app-stack-style {
+    display: flex;
+    flex-direction: column; /* xs */
+    margin: 4px;
+}
+
+.app-card-content-style {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.app-ul-style {
+    margin: 0;
+    padding: 0;
+    list-style : none;
+}
+
+.app-app-icon-style {
+    font-size: 60px;
+    color: rgb(149, 117, 205);
+}
   
+@media (min-width: 960px) {
+    .app-stack-style {
+        margin: 16px; /* md */
+    }
+}
+
+@media (min-width: 768px) {
+    .app-stack-style {
+        flex-direction: row; /* sm */
+        margin: 8px;
+    }
+}

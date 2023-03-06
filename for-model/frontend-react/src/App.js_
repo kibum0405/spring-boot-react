@@ -55,6 +55,49 @@ class App extends React.Component {
                     handleClick={this.handleClick}
                 />
 			</Grid>
+            {{#boundedContexts}}
+            {{#aggregates}}
+            <Grid item lg={8}>
+				{this.state.urlPath?
+                    <Routes>
+                        <Route path="/" element={<DashboardView />} />
+                        <Route path="/files" element={<FileManager />} />
+                        <Route path="/files/:id" element={<FileDetail />} />
+                        <Route path="/indices" element={<IndexManager />} />
+                        <Route path="/indices/:id" element={<IndexManager />} />
+                        <Route path="/video" element={<Video />} />
+                        <Route path="*" element={<NoMatch />} />
+                    </Routes>
+					:
+				    (
+					<Stack className="app-stack-style"
+						justifyContent="center"
+					>
+						<Card className="app-card-style"
+                            variant="outlined"
+                        >
+							<CardContent className="app-card-content-style">
+								<ul className="app-ul-style">
+									<Typography
+										component="li"
+										align="center"
+									>
+										<AppsIcon className="app-app-icon-style" />
+									</Typography>
+								</ul>
+							</CardContent>
+                            <CardActions>
+                                <Button fullWidth={true} color="secondary" variant="outlined">
+                                {{namePascalCase}}
+                                </Button>
+                            </CardActions>
+						</Card>
+					</Stack>
+				    )
+				}
+			</Grid>
+            {{/aggregates}}
+            {{/boundedContexts}}
         </Grid>
       </>
     );
