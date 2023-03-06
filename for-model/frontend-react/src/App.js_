@@ -7,7 +7,7 @@ import TopMenu from './components/TopMenu.js';
 import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from '@mui/material';
 import LeftMenu from './components/LeftMenu.js'
 import AppsIcon from '@mui/icons-material/Apps';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -53,20 +53,21 @@ class App extends React.Component {
 
         <Grid className="app-grid-main" container>
 			<Grid item lg={1}>
-				<LeftMenu menuFlag={this.state.menuFlag}
-                    handleClick={this.handleClick}
-                />
+            <LeftMenu menuFlag={this.state.menuFlag} handleClick={this.handleClick}
+							changeUrl={this.changeUrl}/>
 			</Grid>
             <Grid item lg={8}>
 				{
                     this.state.urlPath?
-                    <Routes>
-                        {{#boundedContexts}}
-                        {{#aggregates}}
-                        <Route path="/{{namePlural}}" element={<{{namePascalCase}} />} />
-                        {{/aggregates}}
-                        {{/boundedContexts}}
-                    </Routes>
+					<Router>
+                        <Routes>
+                            {{#boundedContexts}}
+                            {{#aggregates}}
+                            <Route path="/{{namePlural}}" element={<{{namePascalCase}} />} />
+                            {{/aggregates}}
+                            {{/boundedContexts}}
+                        </Routes>
+                    </Router>
 					:
 				    (
 					<Stack className="app-stack-style"
@@ -88,7 +89,8 @@ class App extends React.Component {
 								</ul>
 							</CardContent>
                             <CardActions>
-                                <Button fullWidth={true} color="secondary" variant="outlined">
+                                <Button fullWidth={true} color="secondary" variant="outlined"
+                                    onClick={this.changeUrl}>
                                 {{namePascalCase}}
                                 </Button>
                             </CardActions>
