@@ -2,11 +2,16 @@ forEach: Aggregate
 fileName: {{namePascalCase}}.js
 path: frontend-react/src/components
 ---
+import React from 'react';
 
-function DashboardViewDetail() {
-  return (
-  )
+class {{namePascalCase}} extends React.Component {
+  render() {
+    return (
+      <>
+        
+      </>
+    );
+  }
 }
 
-
-export default DashboardViewDetail;
+export default {{namePascalCase}};

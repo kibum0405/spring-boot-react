@@ -63,7 +63,7 @@ class App extends React.Component {
                     <Routes>
                         {{#boundedContexts}}
                         {{#aggregates}}
-                        <Route path="/{{namePlural}}" element={<{{nameCamelCase}} />} />
+                        <Route path="/{{namePlural}}" element={<{{namePascalCase}} />} />
                         {{/aggregates}}
                         {{/boundedContexts}}
                     </Routes>
