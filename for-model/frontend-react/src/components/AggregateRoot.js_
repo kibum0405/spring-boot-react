@@ -1,0 +1,12 @@
+forEach: Aggregate
+fileName: {{namePascalCase}}.vue
+path: frontend/src/components
+---
+
+function DashboardViewDetail() {
+  return (
+  )
+}
+
+
+export default DashboardViewDetail;
