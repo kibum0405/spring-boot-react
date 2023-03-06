@@ -1,6 +1,6 @@
 forEach: Aggregate
-fileName: {{namePascalCase}}.vue
-path: frontend/src/components
+fileName: {{namePascalCase}}.js
+path: frontend-react/src/components
 ---
 
 function DashboardViewDetail() {
