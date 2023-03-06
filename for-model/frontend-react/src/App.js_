@@ -8,6 +8,11 @@ import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from 
 import LeftMenu from './components/LeftMenu.js'
 import AppsIcon from '@mui/icons-material/Apps';
 import { Route, Routes } from "react-router-dom";
+{{#boundedContexts}}
+{{#aggregates}}
+import {{namePascalCase}} from './components/{{namePascalCase}}'
+{{/aggregates}}
+{{/boundedContexts}}
 
 class App extends React.Component {
   constructor(props) {
