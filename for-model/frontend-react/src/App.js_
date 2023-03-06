@@ -4,8 +4,9 @@ fileName: App.js
 import './App.css';
 import React from 'react';
 import TopMenu from './components/TopMenu.js';
-import { Grid } from '@mui/material';
+import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from '@mui/material';
 import LeftMenu from './components/LeftMenu.js'
+import AppsIcon from '@mui/icons-material/Apps';
 
 class App extends React.Component {
   constructor(props) {

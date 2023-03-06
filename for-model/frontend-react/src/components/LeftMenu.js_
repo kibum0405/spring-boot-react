@@ -17,6 +17,7 @@ class Layout extends React.Component {
     render() {
         let menuFlag = this.props.menuFlag;
         let handleClick = this.props.handleClick;
+        let changeUrl = this.props.changeUrl;
         return (
           <div>
             <Drawer
