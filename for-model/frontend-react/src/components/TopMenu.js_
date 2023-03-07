@@ -12,6 +12,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 class TopMenu extends Component {
     render() {
+        goHome = () => {
+            this.props.handleProps('urlPath', null);
+        }
         const darkTheme = createTheme({
             palette: {
                 primary: {
