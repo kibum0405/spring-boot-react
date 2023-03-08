@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Dialog, Grid, IconButton, SpeedDial, SpeedDialIcon, Stack} from "@mui/material";
 import Index from "../Index";
 import CloseIcon from "@mui/icons-material/Close";
+import './IndexCards'
 
 class IndexCards extends React.Component {
     constructor(props){
@@ -110,9 +111,8 @@ class IndexCards extends React.Component {
                     spacing={2}
                 >
                     <h1 style={titleStyle}>Index</h1>
-                    <SpeedDial className="inde"
+                    <SpeedDial className="index-card-speed-dial"
                         ariaLabel="SpeedDial controlled open example"
-                        sx={{ position: 'absolute', bottom: 16, right: 16 }}
                         icon={<SpeedDialIcon />}
                         onClick={this.handleOpen}
                         open={this.state.open}
@@ -125,7 +125,7 @@ class IndexCards extends React.Component {
                         onClose={this.handleClose}
                         // TransitionComponent={Transition}
                     >
-                        <Grid container sx={{display:'relative'}}>
+                        <Grid container>
                             <Grid item xs>
                                 {<Index offline={this.state.offline} isNew={true} editMode={this.state.editMode} value={this.state.newValue} onChange={this.handleChange}
                                        handleProps={this.handleProps} handleClose={this.handleClose} add={this.append} />}
@@ -149,7 +149,7 @@ class IndexCards extends React.Component {
                     alignItems="center"
                     spacing={2}
                 >
-                    <Grid container spacing={{lg:2, md:2}} columns={this.state.values.length*4>=16?16:this.state.values.length*4}>
+                    <Grid className="index-card-grid2" container columns={this.state.values.length*4>=16?16:this.state.values.length*4}>
                         {this.state.values.map((value,index) => {
                             return (
                                 <Grid item xs={4} key={index}>
