@@ -1,6 +1,6 @@
 forEach: Aggregate
-fileName: {{namePascalCase}}Cards.js
-path: frontend-react/src/components/listers
+fileName: {{namePascalCase}}Cards.vue
+path: frontend/src/components/listers
 ---
 import React from 'react';
 import axios from 'axios';
