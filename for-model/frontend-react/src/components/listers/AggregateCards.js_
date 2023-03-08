@@ -5,7 +5,7 @@ path: frontend-react/src/components/listers
 import React from 'react';
 import axios from 'axios';
 import {Dialog, Grid, IconButton, SpeedDial, SpeedDialIcon, Stack} from "@mui/material";
-import Index from "../Index";
+import {{namePascalCase}} from "../{{namePascalCase}}";
 import CloseIcon from "@mui/icons-material/Close";
 import './{{namePascalCase}}Cards.css'
 
@@ -51,7 +51,6 @@ class IndexCards extends React.Component {
 
     handleChange = ({target}) => {
         console.log("String change", target );
-        // this.setState({ newValue: {...this.state.newValue,[target.name]:target.value} });
         this.setState((state) => {
             return {...state, newValue: {...state.newValue,[target.name]:target.value}}
         });
@@ -63,10 +62,6 @@ class IndexCards extends React.Component {
     append = (value) => {
         this.setState({...this.state, tick: false,editMode:true, newValue:{}, values:this.state.values.push(value)});
         this.handleClose();
-        // this.$emit('input', this.values);
-        // this.$nextTick(function(){
-        //     this.tick=true
-        // })
     }
     edit = () => {
         this.setState({ editMode: true });
@@ -114,7 +109,7 @@ class IndexCards extends React.Component {
                     alignItems="flex-start"
                     spacing={2}
                 >
-                    <h1 style={titleStyle}>Index</h1>
+                    <h1 style={titleStyle}>{{namePascalCase}}</h1>
                     <SpeedDial className="index-card-speed-dial"
                         ariaLabel="SpeedDial controlled open example"
                         icon={<SpeedDialIcon />}
@@ -131,7 +126,7 @@ class IndexCards extends React.Component {
                     >
                         <Grid container>
                             <Grid item xs>
-                                {<Index offline={this.state.offline} isNew={true} editMode={this.state.editMode} value={this.state.newValue} onChange={this.handleChange}
+                                {<{{namePascalCase}} offline={this.state.offline} isNew={true} editMode={this.state.editMode} value={this.state.newValue} onChange={this.handleChange}
                                        handleProps={this.handleProps} handleClose={this.handleClose} add={this.append} />}
                             </Grid>
                             <Grid>
@@ -157,7 +152,7 @@ class IndexCards extends React.Component {
                         {this.state.values.map((value,index) => {
                             return (
                                 <Grid item xs={4} key={index}>
-                                    <Index offline={this.state.offline} keyIndex={index} onChange={this.handleListChange.bind(this, index)} editMode={value.editMode}
+                                    <{{namePascalCase}} offline={this.state.offline} keyIndex={index} onChange={this.handleListChange.bind(this, index)} editMode={value.editMode}
                                           append={this.append} edit={this.edit} value={value} delete={this.remove} handleProps={this.handleProps} handleClose={this.handleClose}/>
                                 </Grid>
                             )
