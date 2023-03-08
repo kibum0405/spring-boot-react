@@ -20,7 +20,7 @@ import String from "./primitives/String";
 
 {{#boundedContexts}}
 {{#aggregates}}
-  class {{{namePascalCase}} extends React.Component {
+  class {{namePascalCase}} extends React.Component {
 {{/aggregates}}
 {{/boundedContexts}}
     constructor(props) {
