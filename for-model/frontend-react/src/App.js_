@@ -68,7 +68,7 @@ class App extends React.Component {
                     <Routes>
                         {{#boundedContexts}}
                         {{#aggregates}}
-                        <Route path="/{{namePlural}}" element={<{{namePascalCase}}Cards.js />} />
+                        <Route path="/{{namePlural}}" element={<{{namePascalCase}}Cards />} />
                         {{/aggregates}}
                         {{/boundedContexts}}
                     </Routes>
