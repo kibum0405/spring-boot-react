@@ -18,11 +18,7 @@ import {
 } from "@mui/material";
 import String from "./primitives/String";
 
-{{#boundedContexts}}
-{{#aggregates}}
   class {{namePascalCase}} extends React.Component {
-{{/aggregates}}
-{{/boundedContexts}}
     constructor(props) {
         super(props);
         this.state = {
@@ -140,20 +136,12 @@ import String from "./primitives/String";
                 <CardHeader
                     title={
                         this.props.value && this.props.value._links?
-                            {{#boundedContexts}}
-                            {{#aggregates}}
                             <Typography variant="h5" component="div">
                                 {{namePascalCase}} # {this.props.value._links.self.href.split("/")[this.props.value._links.self.href.split("/").length - 1]}
-                            </Typography>
-                            {{/aggregates}}
-                            {{/boundedContexts}}:
-                            {{#boundedContexts}}
-                            {{#aggregates}}
+                            </Typography>:
                             <Typography variant="h5" component="div">
                                 {{namePascalCase}}
                             </Typography>
-                            {{/aggregates}}
-                            {{/boundedContexts}}
                             
                             
                     }
@@ -204,8 +192,4 @@ import String from "./primitives/String";
         )}
 }
 
-{{#boundedContexts}}
-{{#aggregates}}
 export default {{namePascalCase}};
-{{/aggregates}}
-{{/boundedContexts}}
