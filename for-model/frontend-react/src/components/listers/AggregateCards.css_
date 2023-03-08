@@ -1,6 +1,6 @@
 forEach: Aggregate
 fileName: {{namePascalCase}}Cards.css
-path: frontend/src/components/listers
+path: frontend-react/src/components/listers
 ---
 .index-card-speed-dial {
     position: absolute;
