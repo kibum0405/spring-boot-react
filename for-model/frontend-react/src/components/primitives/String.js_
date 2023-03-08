@@ -4,6 +4,7 @@ path: frontend-react/src/components/primitives
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {FormControl, InputLabel, Input} from '@mui/material';
+import 'primitives.css'
 
 class String extends Component {
 
