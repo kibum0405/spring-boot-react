@@ -1,9 +1,13 @@
+forEach: Aggregate
+fileName: {{namePascalCase}}Cards.js
+path: frontend/src/components/listers
+---
 import React from 'react';
 import axios from 'axios';
 import {Dialog, Grid, IconButton, SpeedDial, SpeedDialIcon, Stack} from "@mui/material";
 import Index from "../Index";
 import CloseIcon from "@mui/icons-material/Close";
-import './IndexCards'
+import './AggregateCards.js_'
 
 class IndexCards extends React.Component {
     constructor(props){
