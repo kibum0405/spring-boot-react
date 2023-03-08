@@ -8,7 +8,7 @@ import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from 
 import LeftMenu from './components/LeftMenu.js'
 import AppsIcon from '@mui/icons-material/Apps';
 import { Route, Routes } from "react-router-dom";
-import IndexManager from './components/listers/IndexCards';
+import './listers/{{namePascalCase}}Cards.js'
 {{#boundedContexts}}
 {{#aggregates}}
 import {{namePascalCase}} from './components/{{namePascalCase}}'
@@ -68,7 +68,7 @@ class App extends React.Component {
                     <Routes>
                         {{#boundedContexts}}
                         {{#aggregates}}
-                        <Route path="/{{namePlural}}" element={<IndexManager />} />
+                        <Route path="/{{namePlural}}" element={<{{namePascalCase}}Cards.js />} />
                         {{/aggregates}}
                         {{/boundedContexts}}
                     </Routes>
