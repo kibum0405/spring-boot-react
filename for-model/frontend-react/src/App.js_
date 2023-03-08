@@ -10,7 +10,7 @@ import AppsIcon from '@mui/icons-material/Apps';
 import { Route, Routes } from "react-router-dom";
 {{#boundedContexts}}
 {{#aggregates}}
-import ./components/listers/{{namePascalCase}}Cards from './components/{{namePascalCase}}Cards'
+import {{namePascalCase}}Cards from './components/listers{{namePascalCase}}Cards'
 {{/aggregates}}
 {{/boundedContexts}}
 
