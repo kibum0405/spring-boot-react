@@ -8,10 +8,9 @@ import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from 
 import LeftMenu from './components/LeftMenu.js'
 import AppsIcon from '@mui/icons-material/Apps';
 import { Route, Routes } from "react-router-dom";
-import './listers/{{namePascalCase}}Cards.js'
 {{#boundedContexts}}
 {{#aggregates}}
-import {{namePascalCase}} from './components/{{namePascalCase}}'
+import ./components/listers/{{namePascalCase}}Cards from './components/{{namePascalCase}}Cards'
 {{/aggregates}}
 {{/boundedContexts}}
 
