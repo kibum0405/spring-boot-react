@@ -9,7 +9,7 @@ import {{namePascalCase}} from "../{{namePascalCase}}";
 import CloseIcon from "@mui/icons-material/Close";
 import './{{namePascalCase}}Cards.css'
 
-class IndexCards extends React.Component {
+class {{namePascalCase}}Cards extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -164,4 +164,4 @@ class IndexCards extends React.Component {
     }
 }
 
-export default IndexCards;
+export default {{namePascalCase}}Cards;
