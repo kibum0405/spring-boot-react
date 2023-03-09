@@ -1,0 +1,18 @@
+fileName: String.js
+path: frontend-react/src/components/primitives
+---
+import React, { Component } from 'react';
+import './primitives.css'
+
+class String extends Component {
+
+    render() {
+        return (
+            <div>
+                Date
+            </div>
+        );
+    }
+}
+
+export default String;

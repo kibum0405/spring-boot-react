@@ -16,7 +16,14 @@ import {
     Snackbar,
     Typography
 } from "@mui/material";
-import String from "./primitives/String";
+{{#aggregateRoot.fieldDescriptors}}
+{{#if (isNotId nameCamelCase)}}
+{{#if (isPrimitive className)}}
+import {{getPrimitiveType className}} from "./primitives/{{getPrimitiveType className}}";
+{{/aggregateRoot.fieldDescriptors}}
+{{/if (isNotId nameCamelCase)}}
+{{/if (isPrimitive className)}}
+
 
   class {{namePascalCase}} extends React.Component {
     constructor(props) {
