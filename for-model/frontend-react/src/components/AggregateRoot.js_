@@ -230,6 +230,7 @@ export default {{namePascalCase}};
 var arr=new Array();
 
 window.$HandleBars.registerHelper('checkValue', function (className, options) {
+    debugger;
     if(arr.indexOf(className) == -1){
         arr.push(className);
         return options.fn(this);
