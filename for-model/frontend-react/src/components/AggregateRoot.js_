@@ -231,8 +231,8 @@ var arr=new Array();
 
 window.$HandleBars.registerHelper('checkValue', function (className, options) {
     var cls = className;
-    if(cls == 'Long' && cls == 'Integer' && cls == 'Float' && cls == 'Double' && cls == 'BigDecimal') {
-        cls = 'Number'
+    if(cls == "Long" && cls == "Integer" && cls == "Float" && cls == "Double" && cls == "BigDecimal") {
+        cls = "Number"
     }
     debugger;
     if(arr.indexOf(cls) == -1){
