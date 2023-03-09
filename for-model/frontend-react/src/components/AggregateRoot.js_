@@ -136,21 +136,34 @@ import String from "./primitives/String";
                 <CardHeader
                     title={
                         this.props.value && this.props.value._links?
-                            <Typography variant="h5" component="div">
-                                {{namePascalCase}} # {this.props.value._links.self.href.split("/")[this.props.value._links.self.href.split("/").length - 1]}
-                            </Typography>:
-                            <Typography variant="h5" component="div">
-                                {{namePascalCase}}
-                            </Typography>
-                            
-                            
+                        <Typography variant="h5" component="div">
+                            {{namePascalCase}} # {this.props.value._links.self.href.split("/")[this.props.value._links.self.href.split("/").length - 1]}
+                        </Typography>:
+                        <Typography variant="h5" component="div">
+                            {{namePascalCase}}
+                        </Typography>
                     }
                 />
 
                 <CardContent className="aggre-gate-root-card-content-style">
                     <Typography className="aggre-gate-root-typography-style" color="text.secondary">
-                        <String name="keywords" label={"Keywords"} onChange={this.props.onChange} value={this.props.value && this.props.value._links ? this.props.value.keywords:""} editMode={this.props.editMode}/>
-                        <String name="fileKey" label={"FileKey"} onChange={this.props.onChange} value={this.props.value && this.props.value._links ?this.props.value.fileKey:""} editMode={this.props.editMode}/>
+                    {{#aggregateRoot.fieldDescriptors}}
+                    {{#if (isNotId nameCamelCase)}}
+                    {{#if (isPrimitive className)}}
+                        <{{getPrimitiveType className}} label="{{namePascalCase}}" onChange={this.props.onChange} value={this.props.value.keywords?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
+                    {{else}}
+                        {{#checkVO className}}
+                        <{{className}} offline label="{{namePascalCase}}" value={this.props.value.keywords?this.props.value.{{nameCamelCase}}:"" editMode={this.props.editMode}/>
+                        {{/checkVO}}
+                        {{#checkEntityMember className}}
+                        <{{className}} offline label="{{namePascalCase}}" value={this.props.value.keywords?this.props.value.{{nameCamelCase}}:"" editMode={this.props.editMode}/>
+                        {{/checkEntityMember}}
+                        {{#checkListOfEntityMember className}}
+                        <{{getEntityClassNameOfList className}}Manager offline label="{{namePascalCase}}" value={this.props.value.keywords?this.props.value.{{nameCamelCase}}:"" editMode={this.props.editMode}/>
+                        {{/checkListOfEntityMember}}
+                    {{/if}}
+                    {{/if}}
+                    {{/aggregateRoot.fieldDescriptors}}
                     </Typography>
                 </CardContent>
                 <CardActions>
