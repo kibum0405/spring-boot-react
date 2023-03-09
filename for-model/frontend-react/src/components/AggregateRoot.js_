@@ -19,7 +19,17 @@ import {
 {{#aggregateRoot.fieldDescriptors}}
 {{#if (isNotId nameCamelCase)}}
 {{#if (isPrimitive className)}}
+import {{getPrimitiveType className}} from "./primitives/{{getPrimitiveType className}}";
+{{else}}
+{{#checkVO className}}
 import {{className}} from "./primitives/{{className}}";
+{{/checkVO}}
+{{#checkEntityMember className}}
+import {{className}} from "./primitives/{{className}}";
+{{/checkEntityMember}}
+{{#checkListOfEntityMember className}}
+import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEntityClassNameOfList className}}Manager";
+{{/checkListOfEntityMember}}
 {{/if}}
 {{/if}}
 {{/aggregateRoot.fieldDescriptors}}
