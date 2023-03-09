@@ -20,7 +20,7 @@ import {
 {{#if (isNotId nameCamelCase)}}
 {{#if (isPrimitive className)}}
 {{#checkValue className}}
-import {{className}} from "./primitives/{{className}}";
+import {{getPrimitiveType className}} from "./primitives/{{getPrimitiveType className}}";
 {{/checkValue}}
 {{else}}
 {{#checkVO className}}
@@ -230,6 +230,10 @@ export default {{namePascalCase}};
 var arr=new Array();
 
 window.$HandleBars.registerHelper('checkValue', function (className, options) {
+    var class = className;
+    if(class == 'Long' && class == 'Integer' && class == 'Float' && class == 'Double' && class == 'BigDecimal') {
+        class = 'Number'
+    }
     if(arr.indexOf(className) == -1){
         arr.push(className);
         return options.fn(this);
