@@ -19,7 +19,9 @@ import {
 {{#aggregateRoot.fieldDescriptors}}
 {{#if (isNotId nameCamelCase)}}
 {{#if (isPrimitive className)}}
+{{#checkValue className}}
 import {{getPrimitiveType className}} from "./primitives/{{getPrimitiveType className}}";
+{{/checkValue}}
 {{else}}
 {{#checkVO className}}
 import {{className}} from "./primitives/{{className}}";
@@ -223,3 +225,11 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
 }
 
 export default {{namePascalCase}};
+
+<function>
+window.$HandleBars.registerHelper('checkValue', function (className, options) {
+        if(className.endsWith("String")){
+            return options.fn(this);
+        }
+    })
+</function>
