@@ -19,10 +19,10 @@ import {
 {{#aggregateRoot.fieldDescriptors}}
 {{#if (isNotId nameCamelCase)}}
 {{#if (isPrimitive className)}}
-import {{getPrimitiveType className}} from "./primitives/{{getPrimitiveType className}}";
+import {{className}} from "./primitives/{{className}}";
+{{/if}}
+{{/if}}
 {{/aggregateRoot.fieldDescriptors}}
-{{/if (isNotId nameCamelCase)}}
-{{/if (isPrimitive className)}}
 
 
   class {{namePascalCase}} extends React.Component {
