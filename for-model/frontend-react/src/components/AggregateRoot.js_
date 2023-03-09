@@ -227,9 +227,12 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
 export default {{namePascalCase}};
 
 <function>
+var arr=new Array();
+
 window.$HandleBars.registerHelper('checkValue', function (className, options) {
-        if(className.endsWith("String")){
-            return options.fn(this);
-        }
-    })
+    if(arr.indexOf(className) == -1){
+        arr.push(className);
+        return options.fn(this);
+    }
+})
 </function>
