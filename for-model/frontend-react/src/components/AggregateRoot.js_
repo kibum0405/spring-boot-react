@@ -230,12 +230,12 @@ export default {{namePascalCase}};
 var arr=new Array();
 
 window.$HandleBars.registerHelper('checkValue', function (className, options) {
-    var class = className;
-    if(class == 'Long' && class == 'Integer' && class == 'Float' && class == 'Double' && class == 'BigDecimal') {
-        class = 'Number'
+    var cls = className;
+    if(cls == 'Long' && cls == 'Integer' && cls == 'Float' && cls == 'Double' && cls == 'BigDecimal') {
+        cls = 'Number'
     }
-    if(arr.indexOf(className) == -1){
-        arr.push(className);
+    if(arr.indexOf(cls) == -1){
+        arr.push(cls);
         return options.fn(this);
     }
 })
