@@ -3,6 +3,7 @@ path: frontend-react/src/components/vo
 ---
 
 import React from 'react';
+import './vo.css'
 
 
 // eslint-disable-next-line no-use-before-define
@@ -60,7 +61,7 @@ class File extends React.Component {
     render() {
         return (
             <div>
-                <Card sx={{ minWidth: 275 }}>
+                <Card className="vo-file-card-style">
                     <CardContent>
                         <Typography ariant="h5" component="div">
                             {{label}}
