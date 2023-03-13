@@ -84,7 +84,11 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
             let temp = null;
             if(!this.props.offline) {
                 if(this.props.isNew) {
-                    temp = await axios.get(axios.fixUrl('/indices'));
+                    {{#boundedContexts}}
+                    {{#aggregates}}
+                    temp = await axios.get(axios.fixUrl('/{{namePlural}}'));
+                    {{/aggregates}}
+                    {{/boundedContexts}}
                 } else {
                     temp = await axios.put(axios.fixUrl(this.props.value._links.self.href), this.props.value);
                 }
