@@ -1,7 +1,6 @@
 fileName: File.js
 path: frontend-react/src/components/vo
 ---
-
 import React from 'react';
 import './vo.css'
 

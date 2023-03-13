@@ -7,7 +7,7 @@ import axios from 'axios';
 import {Dialog, Grid, IconButton, SpeedDial, SpeedDialIcon, Stack} from "@mui/material";
 import {{namePascalCase}} from "../{{namePascalCase}}";
 import CloseIcon from "@mui/icons-material/Close";
-import './{{namePascalCase}}Cards.css'
+import './Listers.css'
 
 class {{namePascalCase}}Cards extends React.Component {
     constructor(props){
