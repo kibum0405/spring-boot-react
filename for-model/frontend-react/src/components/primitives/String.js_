@@ -33,7 +33,7 @@ String.propTypes = {
     editMode: PropTypes.oneOfType([PropTypes.bool]),
     name: PropTypes.string,
     label : PropTypes.string,
-    value : PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.string, PropTypes.String, PropTypes.bool, PropTypes.array])
+    value : PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.string, PropTypes.string, PropTypes.bool, PropTypes.array])
 };
 
 export default String;

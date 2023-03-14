@@ -33,7 +33,7 @@ Date.propTypes = {
     editMode: PropTypes.bool,
     name: PropTypes.string,
     label : PropTypes.string,
-    value : PropTypes.Date
+    value : PropTypes.string
 };
 
 
