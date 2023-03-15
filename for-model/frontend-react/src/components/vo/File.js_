@@ -69,10 +69,10 @@ class File extends React.Component {
                         value?
                         editMode?
                         <TextField
-                                id="outlined-password-input"
-                                label="Password"
-                                autoComplete="current-password"
-                                />
+                            id="outlined-password-input"
+                            label="Password"
+                            autoComplete="current-password"
+                            />
                         :
                         <CardActions onClick={this.download}>
                             <Button size="small">{value.fileName}</Button>
