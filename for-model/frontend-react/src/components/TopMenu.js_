@@ -41,13 +41,13 @@ class TopMenu extends Component {
                                 {
                                     this.props.urlPath?
                                     <IconButton className="top-menu-home-icon-btn"
-                                    size="small"
-                                    edge="start"
-                                    key=""
-                                    to="/"
-                                    color="inherit"
-                                    aria-label="menu"
-                                    onClick={this.goHome}
+                                        size="small"
+                                        edge="start"
+                                        key=""
+                                        to="/"
+                                        color="inherit"
+                                        aria-label="menu"
+                                        onClick={this.goHome}
                                     >
                                         <HomeIcon />
                                     </IconButton>

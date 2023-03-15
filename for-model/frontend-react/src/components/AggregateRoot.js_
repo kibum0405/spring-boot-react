@@ -123,6 +123,7 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
             this.props.handleProps("editMode",false, this.props.keyIndex);
             this.props.handleProps("isDeleted",true, this.props.keyIndex);
             this.props.delete(this.props.value);
+            window.location.reload();
 
         } catch(e) {
             if(e.response && e.response.data.message) {
