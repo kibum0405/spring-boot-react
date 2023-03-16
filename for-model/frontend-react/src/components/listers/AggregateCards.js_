@@ -67,7 +67,7 @@ class {{namePascalCase}}Cards extends React.Component {
         this.setState({ editMode: true });
     }
     remove = (value) => {
-        let where = 0;
+        let where = '삭제되었습니다.';
         this.setState((state) => {
             // eslint-disable-next-line array-callback-return
             return {...state, values: this.state.values.map((el,i)=> {

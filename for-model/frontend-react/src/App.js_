@@ -7,7 +7,7 @@ import TopMenu from './components/TopMenu.js';
 import { Grid, Card, CardActions, CardContent, Button, Stack, Typography } from '@mui/material';
 import LeftMenu from './components/LeftMenu.js'
 import AppsIcon from '@mui/icons-material/Apps';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 {{#boundedContexts}}
 {{#aggregates}}
 import {{namePascalCase}}Cards from './components/listers/{{namePascalCase}}Cards'
@@ -93,7 +93,7 @@ class App extends React.Component {
 							</CardContent>
                             <CardActions>
                                 <Button fullWidth={true} color="secondary" variant="outlined"
-                                    onClick={this.changeUrl}>
+                                    onClick={this.changeUrl} component={Link} to={"/{{namePlural}}"}>
                                 {{namePascalCase}}
                                 </Button>
                             </CardActions>
