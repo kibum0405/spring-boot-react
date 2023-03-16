@@ -1,95 +1,40 @@
 fileName: Date.js
 path: frontend-react/src/components/primitives
 ---
-import { useState, useRef } from "react";
-import { DatePicker, Menu, TextField, Spacer, Button } from "vuetify/lib";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import {FormControl, InputLabel, Input} from '@mui/material';
+import './primitives.css'
 
-const Date = ({ value, editMode, label }) => {
-  const [menu, setMenu] = useState(false);
-  const [date, setDate] = useState(
-    new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-      .toISOString()
-      .substr(0, 10)
-  );
-  const menuRef = useRef(null);
-
-  const toggleMenu = () => {
-    setMenu(!menu);
-  };
-
-  const handleSave = (newDate) => {
-    setMenu(false);
-    setDate(newDate);
-    change();
-  };
-
-  const change = () => {
-    if (value !== date) {
-      if (typeof value === "object" && value instanceof Date) {
-        value.setFullYear(date.getFullYear());
-        value.setMonth(date.getMonth());
-        value.setDate(date.getDate());
-      } else {
-        value = date;
-      }
-      // 입력값이 변경될 때마다 input 이벤트를 발생시켜 부모 컴포넌트에 변경된 값을 전달합니다.
-      input(value);
+class Date extends Component {
+    
+    render() {
+        return (
+            <div className="number-width-100">
+                {this.props.editMode?
+                <div className="number-width-100">
+                    <FormControl className="number-width-100" variant="standard">
+                        <InputLabel htmlFor="component-simple">{this.props.label}</InputLabel>
+                        <Input className="number-width-100" name={this.props.name?this.props.name:""} value={this.props.value} onChange={this.props.onChange} />
+                    </FormControl>
+                </div>
+                :(`${this.props.label} : ${this.props.value}`)}
+            </div>
+        );
     }
-  };
+}
 
-  const input = (newValue) => {
-    // 부모 컴포넌트에 변경된 값을 전달합니다.
-    const event = new Event("input", { bubbles: true });
-    event.target = { value: newValue };
-    document.dispatchEvent(event);
-  };
-
-  return (
-    <div>
-      {editMode && (
-        <div>
-          <Menu
-            ref={menuRef}
-            v-model={menu}
-            close-on-content-click={false}
-            return-value.sync={date}
-            transition="scale-transition"
-            offset-y
-            min-width="auto"
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <TextField
-                v-model={date}
-                label={label}
-                prepend-icon="mdi-calendar"
-                readonly
-                {...attrs}
-                {...on}
-              ></TextField>
-            </template>
-            <DatePicker v-model={date} no-title scrollable>
-              <Spacer></Spacer>
-              <Button text color="primary" onClick={() => setMenu(false)}>
-                Cancel
-              </Button>
-              <Button
-                text
-                color="primary"
-                onClick={() => handleSave(date)}
-              >
-                OK
-              </Button>
-            </DatePicker>
-          </Menu>
-        </div>
-      )}
-      {!editMode && (
-        <div>
-          {label} : {value}
-        </div>
-      )}
-    </div>
-  );
+Date.defaultProps = {
+    editMode: false,
+    label: "",
+    value: 0
+}
+Date.propTypes = {
+    editMode: PropTypes.bool,
+    name: PropTypes.string,
+    label : PropTypes.string,
+    value : PropTypes.number
 };
+
 
 export default Date;

@@ -85,6 +85,7 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
             if(!this.props.offline) {
                 if(this.props.isNew) {
                     temp = await axios.post(axios.fixUrl('/{{namePlural}}'), this.props.value);
+                    window.location.reload()
                 } else {
                     temp = await axios.put(axios.fixUrl(this.props.value._links.self.href), this.props.value);
                 }
@@ -202,7 +203,7 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
                         <Grid container className="aggre-gate-root-grid-style">
                             <Grid item xs/>
                             <Grid item>
-                                {!this.props.editMode ? <Button onClick={this.deleteFile} size="small">Delete</Button> : ""}
+                                {this.props.editMode ? <Button onClick={this.deleteFile} size="small">Delete</Button> : ""}
                             </Grid>
                         </Grid>
                     </CardActions>:""}

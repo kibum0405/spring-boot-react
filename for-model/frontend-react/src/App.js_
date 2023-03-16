@@ -25,6 +25,7 @@ class App extends React.Component {
 			components: [],
 			sideBar: true,
         	urlPath: "null",
+			isChangedUrl: true,
 		}
 	}
 	componentDidMount () {
@@ -46,6 +47,7 @@ class App extends React.Component {
 		let path = document.location.href.split("#/")
 		console.log("changeUrl", path);
 		this.setState({...this.state, urlPath:path[0]});
+		this.setState.isChangedUrl = false
 	}
   render() {
     return (
@@ -61,7 +63,7 @@ class App extends React.Component {
 							changeUrl={this.changeUrl}/>
             <Grid item lg={8}>
 				{
-                    this.state.urlPath?
+                    this.state.urlPath && this.setState.isChangedUrl === false ?
                     <Routes>
                         {{#boundedContexts}}
                         {{#aggregates}}
