@@ -35,10 +35,11 @@ class {{namePascalCase}}Cards extends React.Component {
             ...this.state,
             values: temp.data._embedded.{{namePlural}},
             newValue: {
-                'name': '',
-                'type': '',
-                'size': 0,
-                'status': ''
+            {{#aggregateRoot.fieldDescriptors}}
+            {{#if (isNotId nameCamelCase)}}
+                '{{nameCamelCase}}': {{#setDefaultValue className isVO}}{{/setDefaultValue}},
+            {{/if}}
+            {{/aggregateRoot.fieldDescriptors}}
             }
         });
     }

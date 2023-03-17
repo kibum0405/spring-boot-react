@@ -15,7 +15,7 @@ import {{namePascalCase}}Cards from './components/listers/{{namePascalCase}}Card
 {{/boundedContexts}}
 
 class App extends React.Component {
-  constructor(props) {
+    constructor(props) {
 		console.log("App.js")
 		super(props);
 		this.state = {
