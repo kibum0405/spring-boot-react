@@ -1,6 +1,6 @@
 path: /src/main/java/com/example/template
 ---
-package {{options.package}};
+package com.example.template;
 {{#if (isSelectedSecurity selectedSecurity)}}
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
