@@ -7,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
 function CalendarPicker(props) {
-  const [selectedDate, setSelectedDate] = useState(props.value?new Date(props.value):new Date());
+  const [selectedDate, setSelectedDate] = useState(props.value ? new Date(props.value) : null);
   const handleDateChange = (date,e) => {
     setSelectedDate(date);
     if (props.onChange) {

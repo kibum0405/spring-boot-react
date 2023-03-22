@@ -100,7 +100,7 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
             this.props.handleProps("input", this.props.value);
 
             if (this.props.isNew) {
-                this.props.append(this.props.value);
+                this.props.add(this.props.value);
             } else {
                 this.props.edit();
             }

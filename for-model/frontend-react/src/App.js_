@@ -25,12 +25,11 @@ class App extends React.Component {
 			components: [],
 			sideBar: true,
         	urlPath: "null",
-			isCheckUrl: true,
 		}
 	}
 	componentDidMount () {
 		let path = document.location.href.split("#/")
-		this.setState({...this.state, urlPath:path[0]});
+		this.setState({...this.state, urlPath:path[1]});
 		this.handleClick = this.handleClick.bind(this);
 	}
 	handleClick = () => {
@@ -46,7 +45,6 @@ class App extends React.Component {
 	changeUrl = () => {
 		let path = document.location.href.split("#/")
 		this.setState({...this.state, urlPath:path[0]});
-		this.setState({isCheckUrl : true})
 	}
   render() {
     return (
@@ -62,7 +60,7 @@ class App extends React.Component {
 							changeUrl={this.changeUrl}/>
             <Grid item lg={8}>
 				{
-                    this.state.urlPath && this.state.isCheckUrl === true ?
+                    this.state.urlPath ?
                     <Routes>
                         {{#boundedContexts}}
                         {{#aggregates}}
