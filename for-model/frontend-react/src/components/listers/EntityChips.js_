@@ -1,6 +1,6 @@
 forEach: Entity
 fileName: {{namePascalCase}}Chips.js
-path: frontend/src/components/listers
+path: frontend-react/src/components/listers
 ---
 import React, { useState } from 'react';
 import './Chips.css';
